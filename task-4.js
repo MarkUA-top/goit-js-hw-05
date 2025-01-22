@@ -1,0 +1,32 @@
+class StringBuilder {
+  constructor(initialValue) {
+    this._value = initialValue;
+  }
+
+  get value() {
+    return this._value;
+  }
+
+  append(str) {
+    this._value += str;
+  }
+
+  prepend(str) {
+    this._value = str + this._value;
+  }
+
+  pad(str) {
+    this._value = str + this._value + str;
+  }
+}
+
+const builder = new StringBuilder(':');
+
+builder.append('3');
+console.log(builder.value);
+
+builder.prepend('Hi');
+console.log(builder.value);
+
+builder.pad('-');
+console.log(builder.value);
